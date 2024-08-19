@@ -1,13 +1,31 @@
-import React from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useCreateFarmer from '../../api-hooks/farmers/use-create-farmer';
+import Input from '../../components/input';
+import PrivateLayout from '../../components/private-layout';
+import FarmerType from '../../types/farmer-type';
 
 function FarmerFormScreen() {
+  const [form, setForm] = useState<FarmerType>({} as any);
+  const { fetch: createFarmer, pending } = useCreateFarmer();
   let params = useParams();
   console.log(params);
   return (
-    <div>
-      <h1>This is the Farmer Form Screen</h1>
-    </div>
+    <PrivateLayout>
+      <div>
+        <h1 className="font-semibold text-2xl">New Farmer</h1>
+
+        <div>
+          <Input
+            label="Nome"
+            value={form?.name}
+            onChange={(value) => {
+              setForm((state) => ({ ...state, name: value || '' }));
+            }}
+          />
+        </div>
+      </div>
+    </PrivateLayout>
   );
 }
 
