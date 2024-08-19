@@ -1,13 +1,13 @@
 import { useDispatch } from 'react-redux';
-import { newFarmer } from '../../features/farmers-slice';
+import { updateFarmer } from '../../features/farmers-slice';
 import FarmerType from '../../types/farmer-type';
 
-type UseCreateFarmerProps = {
+type UseUpdateFarmerProps = {
   onSuccess?: (data: FarmerType) => void;
   onError?: (error: any) => void;
 };
 
-function useCreateFarmer({ onSuccess, onError }: UseCreateFarmerProps) {
+function useUpdateFarmer({ onSuccess, onError }: UseUpdateFarmerProps) {
   const dispatch = useDispatch();
 
   return {
@@ -18,11 +18,11 @@ function useCreateFarmer({ onSuccess, onError }: UseCreateFarmerProps) {
         return;
       }
 
-      dispatch(newFarmer(farmer));
+      dispatch(updateFarmer(farmer));
       onSuccess?.(farmer);
     },
     pending: false,
   };
 }
 
-export default useCreateFarmer;
+export default useUpdateFarmer;
