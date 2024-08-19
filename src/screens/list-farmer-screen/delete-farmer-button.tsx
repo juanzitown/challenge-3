@@ -1,5 +1,5 @@
 import useDeleteFarmerById from '../../api-hooks/farmers/use-delete-farmer-by-id';
-import Button from '../../components/button';
+import IconButton from '../../components/icon-button';
 import FarmerType from '../../types/farmer-type';
 
 type DeleteFarmerButtonProps = {
@@ -12,15 +12,12 @@ function DeleteFarmerButton({ farmer }: DeleteFarmerButtonProps) {
       onSuccess() {},
     });
   return (
-    <div>
-      <Button
-        onClick={() => {
-          deleteFarmer(farmer?.id);
-        }}
-      >
-        Delete
-      </Button>
-    </div>
+    <IconButton
+      icon="delete"
+      onClick={() => {
+        deleteFarmer(farmer?.id);
+      }}
+    />
   );
 }
 
