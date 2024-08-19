@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateFarmerScreen from './screens/create-farmer-screen';
+import FarmerFormScreen from './screens/farmer-form-screen';
 import ListFarmerScreen from './screens/list-farmer-screen';
 import DashboardFarmerScreen from './screens/dashboard-farmer-screen';
 
@@ -19,8 +19,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/farmer/new",
-    element: <CreateFarmerScreen />
+    element: <FarmerFormScreen />
   },
+  
+  {
+    path: "/farmer/:id",
+    element: <FarmerFormScreen />
+  },
+  
 ]);
 
 function App() {
