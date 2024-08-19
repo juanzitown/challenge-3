@@ -14,16 +14,16 @@ const router = createBrowserRouter([
     element: <DashboardFarmerScreen />
   },
   {
-    path: "/farmer",
+    path: "/farmers",
     element: <ListFarmerScreen />
   },
   {
-    path: "/farmer/new",
+    path: "/farmers/new",
     element: <FarmerFormScreen />
   },
   
   {
-    path: "/farmer/:id",
+    path: "/farmers/:id",
     element: <FarmerFormScreen />
   },
   
