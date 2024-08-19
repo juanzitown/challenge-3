@@ -35,8 +35,12 @@ export const farmersSlice = createSlice({
       list = [...list, updatedFarmer];
       state.list = list;
     },
+    deleteFarmer: (state, action: PayloadAction<FarmerType['id']>) => {
+      const farmerId = action.payload;
+      state.list = state.list.filter((farmer) => farmer.id !== farmerId);
+    },
   },
 });
 
-export const { newFarmer, updateFarmer } = farmersSlice.actions;
+export const { newFarmer, updateFarmer, deleteFarmer } = farmersSlice.actions;
 export default farmersSlice.reducer;

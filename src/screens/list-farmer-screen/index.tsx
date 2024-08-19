@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useFarmers from '../../api-hooks/farmers/use-farmers';
 import Button from '../../components/button';
 import PrivateLayout from '../../components/private-layout';
+import DeleteFarmerButton from './delete-farmer-button';
 
 function ListFarmerScreen() {
   const { data: farmers } = useFarmers();
@@ -30,7 +31,7 @@ function ListFarmerScreen() {
               >
                 Edit
               </Button>
-              <Button>Delete</Button>
+              <DeleteFarmerButton farmer={farmer} />
             </div>
           </div>
         );
