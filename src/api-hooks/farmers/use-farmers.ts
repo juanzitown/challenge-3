@@ -3,7 +3,7 @@ import { RootState } from '../../store';
 
 function useFarmers() {
   const farmers = useSelector((state: RootState) => state.farmers.list);
-  return farmers;
+  return { data: farmers, pending: false };
 }
 
 export default useFarmers;
