@@ -9,7 +9,7 @@ const options = [
   { value: 'ruby', label: 'Ruby' },
 ];
 
-function MultiSelect () {
+function MultiSelect() {
   const [selectedOptions, setSelectedOptions] = React.useState<any[]>([]);
 
   const handleChange = (selectedOptions: any) => {
@@ -21,13 +21,12 @@ function MultiSelect () {
       <Select
         isMulti
         options={options}
-        // className="basic-multi-select"
         classNamePrefix="select"
         onChange={handleChange}
         value={selectedOptions}
       />
     </div>
   );
-};
+}
 
 export default MultiSelect;

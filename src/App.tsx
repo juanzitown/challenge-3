@@ -1,38 +1,31 @@
-import React from 'react';
+import DashboardFarmerScreen from './screens/dashboard-farmer-screen';
 import FarmerFormScreen from './screens/farmer-form-screen';
 import ListFarmerScreen from './screens/list-farmer-screen';
-import DashboardFarmerScreen from './screens/dashboard-farmer-screen';
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <DashboardFarmerScreen />
+    path: '/',
+    element: <DashboardFarmerScreen />,
   },
   {
-    path: "/farmer",
-    element: <ListFarmerScreen />
+    path: '/farmers',
+    element: <ListFarmerScreen />,
   },
   {
-    path: "/farmer/new",
-    element: <FarmerFormScreen />
+    path: '/farmers/new',
+    element: <FarmerFormScreen />,
   },
-  
+
   {
-    path: "/farmer/:id",
-    element: <FarmerFormScreen />
+    path: '/farmers/:id',
+    element: <FarmerFormScreen />,
   },
-  
 ]);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
