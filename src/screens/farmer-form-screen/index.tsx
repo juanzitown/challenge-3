@@ -50,6 +50,7 @@ function FarmerFormScreen() {
           {isEdit ? 'Update Farmer' : 'New Farmer'}
         </h1>
         <form
+          className="flex flex-col gap-6"
           onSubmit={(event) => {
             event?.preventDefault?.();
             if (isEdit) {
