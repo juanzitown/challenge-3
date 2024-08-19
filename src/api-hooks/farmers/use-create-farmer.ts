@@ -1,22 +1,27 @@
-import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { newFarmer } from '../../features/farmers-slice';
 import FarmerType from '../../types/farmer-type';
 
-function useCreateFarmer() {
-  const [pending, setPending] = useState(true);
+type UseCreateFarmerProps = {
+  onSuccess?: (data: FarmerType) => void;
+  onError?: (error: any) => void;
+};
+
+function useCreateFarmer({ onSuccess, onError }: UseCreateFarmerProps) {
   const dispatch = useDispatch();
 
   return {
     fetch: (farmer: FarmerType) => {
-      setPending(true);
-      //fake pending with timeouts
-      setTimeout(() => {
-        dispatch(newFarmer(farmer));
-        setPending(false);
-      }, 2000);
+      //check for errors here
+      if (!farmer?.name) {
+        onError?.({ message: 'Name is required' });
+        return;
+      }
+
+      dispatch(newFarmer(farmer));
+      onSuccess?.(farmer);
     },
-    pending,
+    pending: false,
   };
 }
 

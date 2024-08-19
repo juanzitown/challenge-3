@@ -13,7 +13,7 @@ function Input({ label, placeholder, value, onChange }: InputProps) {
       )}
       <input
         placeholder={placeholder}
-        value={value}
+        value={value || ''}
         onChange={(event) => onChange?.(event?.target?.value)}
         className="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
       />
