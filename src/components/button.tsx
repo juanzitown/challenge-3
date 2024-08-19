@@ -1,12 +1,14 @@
 type ButtonProps = {
-    onClick?: () => void
-    children: React.ReactNode
-}
+  onClick?: () => void;
+  children: React.ReactNode;
+};
 
-function Button({onClick, children}: ButtonProps) {
-    return <button onClick={onClick} className="border p-1 rounded shadow">
-        {children}
+function Button({ onClick, children }: ButtonProps) {
+  return (
+    <button onClick={onClick} className="border p-1 rounded shadow">
+      {children}
     </button>
+  );
 }
 
-export default Button
+export default Button;

@@ -1,5 +1,5 @@
 function useFarmer() {
-    return ["Juan", "Jose", "Joao"]
+  return ['Juan', 'Jose', 'Joao'];
 }
 
-export default useFarmer
+export default useFarmer;
