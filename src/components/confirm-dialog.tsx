@@ -24,7 +24,7 @@ function ConfirmDialog({
           {title}
         </h2>
         <div className="text-base">{message}</div>
-        <div className="flex justify-end space-x-4">
+        <div className="flex flex-row items-center justify-end gap-4">
           <Button onClick={onClose}>Cancel</Button>
           <Button variant="danger" onClick={onConfirm}>
             Confirm

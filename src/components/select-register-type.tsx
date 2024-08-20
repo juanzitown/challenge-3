@@ -30,13 +30,16 @@ function SelectRegisterType({
         {Boolean(label) && (
           <label className="text-sm text-gray-700">{label}</label>
         )}
-        <Select
-          placeholder={placeholder}
-          options={options}
-          classNamePrefix="select"
-          onChange={handleChange}
-          value={value}
-        />
+        <div className="focus-within:ring rounded">
+          <Select
+            styles={customStyles}
+            placeholder={placeholder}
+            options={options}
+            classNamePrefix="select"
+            onChange={handleChange}
+            value={value}
+          />
+        </div>
       </div>
       {Boolean(error) && (
         <div className="h-0 mt-0.5 text-xs text-red-500">{error}</div>
@@ -46,3 +49,17 @@ function SelectRegisterType({
 }
 
 export default SelectRegisterType;
+
+const customStyles = {
+  control: (provided: any, state: any) => ({
+    ...provided,
+    borderColor: state.isFocused ? 'rgb(59, 130, 246)' : 'rgb(209, 213, 219)',
+    '&:hover': {
+      borderColor: 'rgb(209, 213, 219)',
+    },
+  }),
+  placeholder: (provided: any) => ({
+    ...provided,
+    color: 'rgb(156 163 175)', //bg-gray-400
+  }),
+};
