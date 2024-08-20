@@ -1,17 +1,15 @@
-import MultiSelectCrops from '../../components/multi-select-crops';
 import PieChart from '../../components/pie-chart';
 import PrivateLayout from '../../components/private-layout';
+import TotalAreaSizeBoard from './total-area-size-board';
+import TotalFarmsBoard from './total-farms-board';
 
 function DashboardFarmScreen() {
   return (
     <PrivateLayout>
-      <div>
-        <div className="p-4 text-2xl bg-slate-500">
-          This is the Dashboard Farm Screen
-        </div>
+      <div className="flex flex-col gap-6">
+        <TotalFarmsBoard />
+        <TotalAreaSizeBoard />
         <PieChart />
-        <label>Multiselect</label>
-        <MultiSelectCrops />
       </div>
     </PrivateLayout>
   );
