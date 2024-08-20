@@ -11,7 +11,7 @@ function Sidebar() {
           Dashboard
         </Link>
         <Link to="/farms" className="py-2 px-4 hover:bg-gray-700">
-          Farms
+          Fazendas
         </Link>
       </nav>
     </div>

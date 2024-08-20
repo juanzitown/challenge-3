@@ -23,7 +23,10 @@ function FarmListItem({ farm }: FarmListItemProps) {
         <div className="flex flex-col flex-1"></div>
         {/* area size icons */}
         <div className="flex flex-row items-center justify-center gap-6">
-          <div className="flex flex-row gap-1">
+          <div
+            className="flex flex-row gap-1"
+            title={`Área total em hectares: ${farm?.totalAreaSize}ha`}
+          >
             <svg
               width="24px"
               className="text-gray-700"
@@ -47,7 +50,10 @@ function FarmListItem({ farm }: FarmListItemProps) {
               <span className="text-xs mt-1 ml-px">ha</span>
             </div>
           </div>
-          <div className="flex flex-row gap-1">
+          <div
+            className="flex flex-row gap-1"
+            title={`Área de vegetação em hectares: ${farm?.vegetationAreaSize}ha`}
+          >
             <svg
               className="text-gray-700"
               height="24px"
@@ -64,7 +70,10 @@ function FarmListItem({ farm }: FarmListItemProps) {
               <span className="text-xs mt-1 ml-px">ha</span>
             </div>
           </div>
-          <div className="flex flex-row gap-1">
+          <div
+            className="flex flex-row gap-1"
+            title={`Área agricultável em hectares: ${farm?.farmableAreaSize}ha`}
+          >
             <svg
               className="text-gray-700"
               height="24px"
@@ -109,7 +118,9 @@ function FarmListItem({ farm }: FarmListItemProps) {
             farm?.farmer?.name,
             (farm?.farmer?.register?.type as any)?.label,
             farm?.farmer?.register?.number,
-          ].join(' | ')}
+          ]
+            .filter(Boolean)
+            .join(' | ')}
         </div>
       </div>
       {/* location */}
