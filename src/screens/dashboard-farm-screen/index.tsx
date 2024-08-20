@@ -1,4 +1,4 @@
-import MultiSelect from '../../components/multi-select';
+import MultiSelectCrops from '../../components/multi-select-crops';
 import PieChart from '../../components/pie-chart';
 import PrivateLayout from '../../components/private-layout';
 
@@ -11,7 +11,7 @@ function DashboardFarmScreen() {
         </div>
         <PieChart />
         <label>Multiselect</label>
-        <MultiSelect />
+        <MultiSelectCrops />
       </div>
     </PrivateLayout>
   );
