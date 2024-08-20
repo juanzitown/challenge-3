@@ -17,7 +17,9 @@ function FarmListItem({ farm }: FarmListItemProps) {
         <div className="flex flex-row items-center gap-3 min-w-[200px]">
           <div className="flex flex-col text-lg font-medium">{farm?.name}</div>
           <div className="flex flex-row gap-1">
-            {farm?.crops?.map?.((crop: any) => <Badge>{crop?.label}</Badge>)}
+            {farm?.crops?.map?.((crop: any) => (
+              <Badge key={crop?.value}>{crop?.label}</Badge>
+            ))}
           </div>
         </div>
         <div className="flex flex-col flex-1"></div>
