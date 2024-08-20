@@ -1,4 +1,4 @@
-type InputProps = {
+export type InputProps = {
   label?: string;
   placeholder?: string;
   value?: string;

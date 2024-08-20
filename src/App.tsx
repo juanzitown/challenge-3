@@ -1,26 +1,26 @@
-import DashboardFarmerScreen from './screens/dashboard-farmer-screen';
-import FarmerFormScreen from './screens/farmer-form-screen';
-import ListFarmerScreen from './screens/list-farmer-screen';
+import DashboardFarmScreen from './screens/dashboard-farm-screen';
+import FarmFormScreen from './screens/farm-form-screen';
+import ListFarmScreen from './screens/list-farm-screen';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <DashboardFarmerScreen />,
+    element: <DashboardFarmScreen />,
   },
   {
-    path: '/farmers',
-    element: <ListFarmerScreen />,
+    path: '/farms',
+    element: <ListFarmScreen />,
   },
   {
-    path: '/farmers/new',
-    element: <FarmerFormScreen />,
+    path: '/farms/new',
+    element: <FarmFormScreen />,
   },
 
   {
-    path: '/farmers/:id',
-    element: <FarmerFormScreen />,
+    path: '/farms/:id',
+    element: <FarmFormScreen />,
   },
 ]);
 

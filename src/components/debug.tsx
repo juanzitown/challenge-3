@@ -1,7 +1,7 @@
-import useFarmers from '../api-hooks/farmers/use-farmers';
+import useFarms from '../api-hooks/farmers/use-farms';
 
 function Debug() {
-  const { data: farmers } = useFarmers();
+  const { data: farmers } = useFarms();
 
   return (
     <div className="flex flex-col gap-0.5">

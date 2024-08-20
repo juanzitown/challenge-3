@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import farmersReducer from './features/farmers-slice';
+import farmsReducer from './features/farms-slice';
 
 export const store = configureStore({
   reducer: {
-    farmers: farmersReducer,
+    farms: farmsReducer,
   },
 });
 
