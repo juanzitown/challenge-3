@@ -2,29 +2,34 @@ import { ResponsivePie } from '@nivo/pie';
 import { useMemo } from 'react';
 import useFarms from '../../api-hooks/farms/use-farms';
 
-function TotalByCropBoard() {
+function FarmableVersusVegetationBoard() {
   const { data: farms } = useFarms();
 
   const data = useMemo(() => {
-    const crops = farms?.flatMap((farm) => farm?.crops || []);
-    const map = crops?.reduce((acc, cropObject: any) => {
-      const crop = cropObject?.label;
+    const map = farms?.reduce((acc, farm) => {
       return {
         ...acc,
-        [crop]: (acc?.[crop] || 0) + 1,
+        ['FARMABLE']:
+          (acc?.['FARMABLE'] || 0) + Number(farm?.farmableAreaSize || 0),
+        ['VEGETATION']:
+          (acc?.['VEGETATION'] || 0) + Number(farm?.vegetationAreaSize || 0),
       };
     }, {} as any);
 
     const data = Object.entries(map).map(([key, value]) => {
-      return { id: key, label: key, value };
+      const translate = {
+        FARMABLE: 'Área agricultável',
+        VEGETATION: 'Vegetação',
+      } as any;
+      return { id: translate[key], label: translate[key], value };
     });
     return data;
   }, [farms?.length]);
 
   return (
-    <div className="flex flex-col flex-1 max-w-[400px] py-4 rounded-md bg-white border gap-2">
+    <div className="flex flex-col flex-1 max-w-[400px] py-4 rounded-md bg-white border">
       <div className="text-lg font-medium text-center text-gray-700">
-        Total por Cultura
+        Uso de Solo
       </div>
       <div style={{ height: 160 }}>
         <ResponsivePie
@@ -37,4 +42,4 @@ function TotalByCropBoard() {
   );
 }
 
-export default TotalByCropBoard;
+export default FarmableVersusVegetationBoard;

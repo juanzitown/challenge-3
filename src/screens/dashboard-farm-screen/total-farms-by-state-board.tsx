@@ -20,7 +20,7 @@ function TotalFarmsByStateBoard() {
   }, [farms?.length]);
 
   return (
-    <div className="flex flex-col py-4 rounded-md bg-white border gap-2">
+    <div className="flex flex-col max-w-[600px] flex-1 py-4 rounded-md bg-white border gap-2">
       <div className="text-lg font-medium text-center text-gray-700">
         Total por Estado
       </div>
@@ -28,9 +28,6 @@ function TotalFarmsByStateBoard() {
         <ResponsivePie
           data={data}
           margin={{ top: 30, right: 20, bottom: 30, left: 20 }}
-          colors={{ scheme: 'nivo' }}
-          borderWidth={1}
-          borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
           animate={true}
         />
       </div>
