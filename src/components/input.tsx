@@ -4,9 +4,19 @@ export type InputProps = {
   value?: string;
   onChange?: (value?: string) => void;
   error?: string;
+  type?: 'text' | 'number';
+  min?: number;
 };
 
-function Input({ label, placeholder, value, onChange, error }: InputProps) {
+function Input({
+  type,
+  min,
+  label,
+  placeholder,
+  value,
+  onChange,
+  error,
+}: InputProps) {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col gap-0.5">
@@ -14,6 +24,8 @@ function Input({ label, placeholder, value, onChange, error }: InputProps) {
           <label className="text-sm text-gray-700">{label}</label>
         )}
         <input
+          type={type}
+          min={min}
           placeholder={placeholder}
           value={value || ''}
           onChange={(event) => onChange?.(event?.target?.value)}

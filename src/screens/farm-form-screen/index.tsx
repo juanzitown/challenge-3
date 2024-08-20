@@ -75,6 +75,8 @@ function FarmFormScreen() {
           />
           <div className="flex flex-row flex-wrap gap-4">
             <Input
+              type="number"
+              min={0}
               label="Área total (hectares)"
               value={form?.totalAreaSize as any}
               onChange={(value) => {
@@ -85,6 +87,8 @@ function FarmFormScreen() {
               }}
             />
             <Input
+              type="number"
+              min={0}
               label="Área agricultável (hectares)"
               value={form?.farmableAreaSize as any}
               onChange={(value) => {
@@ -95,6 +99,8 @@ function FarmFormScreen() {
               }}
             />
             <Input
+              type="number"
+              min={0}
               label="Área de vegetação (hectares)"
               value={form?.vegetationAreaSize as any}
               onChange={(value) => {

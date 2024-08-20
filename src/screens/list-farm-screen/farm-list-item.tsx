@@ -119,7 +119,7 @@ function FarmListItem({ farm }: FarmListItemProps) {
           {[
             farm?.farmer?.name,
             (farm?.farmer?.register?.type as any)?.label,
-            farm?.farmer?.register?.number,
+            // farm?.farmer?.register?.number,
           ]
             .filter(Boolean)
             .join(' | ')}
