@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import useCreateFarm from '../../api-hooks/farmers/use-create-farm';
-import useGetFarmById from '../../api-hooks/farmers/use-get-farm-by-id';
-import useUpdateFarm from '../../api-hooks/farmers/use-update-farm';
+import useCreateFarm from '../../api-hooks/farms/use-create-farm';
+import useGetFarmById from '../../api-hooks/farms/use-get-farm-by-id';
+import useUpdateFarm from '../../api-hooks/farms/use-update-farm';
 import Button from '../../components/button';
 import Debug from '../../components/debug';
 import Input from '../../components/input';

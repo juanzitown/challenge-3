@@ -1,4 +1,4 @@
-import useDeleteFarmById from '../../api-hooks/farmers/use-delete-farm-by-id';
+import useDeleteFarmById from '../../api-hooks/farms/use-delete-farm-by-id';
 import IconButton from '../../components/icon-button';
 import FarmType from '../../types/farm-type';
 
