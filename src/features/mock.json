@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Fazenda 001",
+    "totalAreaSize": "15",
+    "farmableAreaSize": "10",
+    "vegetationAreaSize": "5",
+    "city": "Uberlândia",
+    "state": "Minas Gerais",
+    "crops": [{ "value": "SOY", "label": "Soja" }],
+    "farmer": {
+      "name": "João Silva",
+      "register": {
+        "type": { "value": "CPF", "label": "CPF" },
+        "number": "12345678901"
+      }
+    },
+    "id": 1724175068894
+  },
+  {
+    "name": "Fazenda 002",
+    "totalAreaSize": "50",
+    "farmableAreaSize": "30",
+    "vegetationAreaSize": "20",
+    "city": "Campo Grande",
+    "state": "Mato Grosso do Sul",
+    "crops": [{ "value": "CORN", "label": "Milho" }],
+    "farmer": {
+      "name": "Maria Oliveira",
+      "register": {
+        "type": { "value": "CNPJ", "label": "CNPJ" },
+        "number": "12345678000199"
+      }
+    },
+    "id": 1724175068895
+  },
+  {
+    "name": "Fazenda 003",
+    "totalAreaSize": "100",
+    "farmableAreaSize": "70",
+    "vegetationAreaSize": "30",
+    "city": "Ribeirão Preto",
+    "state": "São Paulo",
+    "crops": [{ "value": "SUGAR_CANE", "label": "Cana de Açucar" }],
+    "farmer": {
+      "name": "Carlos Lima",
+      "register": {
+        "type": { "value": "CPF", "label": "CPF" },
+        "number": "98765432100"
+      }
+    },
+    "id": 1724175068896
+  },
+  {
+    "name": "Fazenda 004",
+    "totalAreaSize": "200",
+    "farmableAreaSize": "150",
+    "vegetationAreaSize": "50",
+    "city": "Goiânia",
+    "state": "Goiás",
+    "crops": [{ "value": "COTTON", "label": "Algodão" }],
+    "farmer": {
+      "name": "Ana Souza",
+      "register": {
+        "type": { "value": "CNPJ", "label": "CNPJ" },
+        "number": "11222333000188"
+      }
+    },
+    "id": 1724175068897
+  },
+  {
+    "name": "Fazenda 005",
+    "totalAreaSize": "300",
+    "farmableAreaSize": "100",
+    "vegetationAreaSize": "200",
+    "city": "Belo Horizonte",
+    "state": "Minas Gerais",
+    "crops": [{ "value": "COFFEE", "label": "Café" }],
+    "farmer": {
+      "name": "Pedro Santos",
+      "register": {
+        "type": { "value": "CPF", "label": "CPF" },
+        "number": "12312312312"
+      }
+    },
+    "id": 1724175068898
+  },
+  {
+    "name": "Fazenda 006",
+    "totalAreaSize": "50",
+    "farmableAreaSize": "25",
+    "vegetationAreaSize": "25",
+    "city": "Cuiabá",
+    "state": "Mato Grosso",
+    "crops": [{ "value": "CORN", "label": "Milho" }],
+    "farmer": {
+      "name": "Lucas Pereira",
+      "register": {
+        "type": { "value": "CPF", "label": "CPF" },
+        "number": "09876543210"
+      }
+    },
+    "id": 1724175068899
+  },
+  {
+    "name": "Fazenda 007",
+    "totalAreaSize": "80",
+    "farmableAreaSize": "60",
+    "vegetationAreaSize": "20",
+    "city": "Salvador",
+    "state": "Bahia",
+    "crops": [{ "value": "SOY", "label": "Soja" }],
+    "farmer": {
+      "name": "Paulo Almeida",
+      "register": {
+        "type": { "value": "CNPJ", "label": "CNPJ" },
+        "number": "12345678000299"
+      }
+    },
+    "id": 1724175068900
+  },
+  {
+    "name": "Fazenda 008",
+    "totalAreaSize": "90",
+    "farmableAreaSize": "70",
+    "vegetationAreaSize": "20",
+    "city": "Fortaleza",
+    "state": "Ceará",
+    "crops": [{ "value": "COTTON", "label": "Algodão" }],
+    "farmer": {
+      "name": "Fernanda Costa",
+      "register": {
+        "type": { "value": "CPF", "label": "CPF" },
+        "number": "11122233344"
+      }
+    },
+    "id": 1724175068901
+  },
+  {
+    "name": "Fazenda 009",
+    "totalAreaSize": "110",
+    "farmableAreaSize": "70",
+    "vegetationAreaSize": "40",
+    "city": "Curitiba",
+    "state": "Paraná",
+    "crops": [{ "value": "COFFEE", "label": "Café" }],
+    "farmer": {
+      "name": "Rafael Ferreira",
+      "register": {
+        "type": { "value": "CNPJ", "label": "CNPJ" },
+        "number": "22334455000177"
+      }
+    },
+    "id": 1724175068902
+  },
+  {
+    "name": "Fazenda 010",
+    "totalAreaSize": "60",
+    "farmableAreaSize": "40",
+    "vegetationAreaSize": "20",
+    "city": "Florianópolis",
+    "state": "Santa Catarina",
+    "crops": [{ "value": "SUGAR_CANE", "label": "Cana de Açucar" }],
+    "farmer": {
+      "name": "Renata Gomes",
+      "register": {
+        "type": { "value": "CPF", "label": "CPF" },
+        "number": "22233344455"
+      }
+    },
+    "id": 1724175068903
+  }
+]

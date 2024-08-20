@@ -1,13 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import FarmType from '../types/farm-type';
+import mock from './mock.json';
 
 type SliceProps = {
   list: FarmType[];
 };
 
 const initialState: SliceProps = {
-  list: [],
+  list: mock as any as FarmType[],
 };
 
 export const farmsSlice = createSlice({
