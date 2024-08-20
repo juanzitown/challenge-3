@@ -2,7 +2,7 @@ type ButtonProps = {
   type?: 'button' | 'submit';
   onClick?: () => void;
   children: React.ReactNode;
-  variant?: 'primary';
+  variant?: 'primary' | 'danger';
 };
 
 function Button({ type = 'button', onClick, children, variant }: ButtonProps) {
@@ -12,7 +12,11 @@ function Button({ type = 'button', onClick, children, variant }: ButtonProps) {
       onClick={onClick}
       className={[
         baseClasses,
-        variant === 'primary' ? primaryClasses : defaultClasses,
+        variant === 'primary'
+          ? primaryClasses
+          : variant === 'danger'
+            ? dangerClasses
+            : defaultClasses,
       ].join(' ')}
     >
       {children}
@@ -26,5 +30,7 @@ const baseClasses =
   'px-4 py-2 font-medium rounded-lg shadow-md focus:outline-none focus:ring transition uppercase';
 const primaryClasses =
   'bg-blue-500 text-white hover:bg-blue-700 focus:ring-blue-400';
+const dangerClasses =
+  'bg-red-500 text-white hover:bg-red-700 focus:ring-red-400';
 const defaultClasses =
   'bg-gray-50 text-gray-700 border border-gray-300 hover:bg-gray-100 focus:ring-gray-300';
