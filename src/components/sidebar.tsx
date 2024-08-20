@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
@@ -11,8 +10,8 @@ function Sidebar() {
         <Link to="/" className="py-2 px-4 hover:bg-gray-700">
           Dashboard
         </Link>
-        <Link to="/farmers" className="py-2 px-4 hover:bg-gray-700">
-          Farmers
+        <Link to="/farms" className="py-2 px-4 hover:bg-gray-700">
+          Farms
         </Link>
       </nav>
     </div>

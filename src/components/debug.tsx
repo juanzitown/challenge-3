@@ -1,14 +1,14 @@
-import useFarms from '../api-hooks/farmers/use-farms';
+import useFarms from '../api-hooks/farms/use-farms';
 
 function Debug() {
-  const { data: farmers } = useFarms();
+  const { data: farms } = useFarms();
 
   return (
     <div className="flex flex-col gap-0.5">
-      {farmers?.map?.((farmer) => {
+      {farms?.map?.((farm) => {
         return (
-          <div className="text-sm" key={farmer?.id}>
-            {farmer?.name}
+          <div className="text-sm" key={farm?.id}>
+            {farm?.name}
           </div>
         );
       })}

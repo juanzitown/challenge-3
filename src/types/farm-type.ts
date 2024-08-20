@@ -4,6 +4,8 @@ import FarmerType from './farmer-type';
 type FarmType = {
   id: number;
   name: string;
+  city: string;
+  state: string;
   totalAreaSize: number;
   farmableAreaSize: number;
   vegetationAreaSize: number;
