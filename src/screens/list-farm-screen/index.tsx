@@ -8,6 +8,7 @@ import DeleteFarmButton from './delete-farm-button';
 function ListFarmScreen() {
   const { data: farms } = useFarms();
   const navigate = useNavigate();
+
   return (
     <PrivateLayout>
       <div className="flex flex-row justify-between items-center">
