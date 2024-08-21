@@ -4,6 +4,10 @@ Este projeto demonstra a integração de ferramentas modernas como Nivo, Redux T
 
 Este projeto é um desafio de codificação que demonstra a integração de várias tecnologias e pacotes. Abaixo está um resumo das ferramentas e bibliotecas utilizadas:
 
+## Live Demo
+
+[Challenge](https://juan-fernandes-challenge-3.vercel.app/)
+
 ## Pacotes e Bibliotecas Utilizadas
 
 ### 1. [Nivo](https://nivo.rocks/)
