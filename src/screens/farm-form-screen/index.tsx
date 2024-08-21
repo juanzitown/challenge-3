@@ -23,13 +23,13 @@ function FarmFormScreen() {
     id: Number(params?.id || 0),
   });
 
-  const { fetch: createFarm, errors } = useCreateFarm({
+  const { fetch: createFarm, errors: createErrors } = useCreateFarm({
     onSuccess(data) {
       navigate('/farms');
     },
   });
 
-  const { fetch: updateFarm } = useUpdateFarm({
+  const { fetch: updateFarm, errors: updateErrors } = useUpdateFarm({
     onSuccess(data) {
       navigate('/farms');
     },
@@ -43,6 +43,7 @@ function FarmFormScreen() {
   }, [farm?.id]);
 
   const isEdit = Boolean(params?.id);
+  const errors = { ...(createErrors || {}), ...(updateErrors || {}) };
 
   return (
     <PrivateLayout>
