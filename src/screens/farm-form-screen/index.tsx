@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useCreateFarm from '../../api-hooks/farms/use-create-farm';
 import useGetFarmById from '../../api-hooks/farms/use-get-farm-by-id';
 import useUpdateFarm from '../../api-hooks/farms/use-update-farm';
+import BackButton from '../../components/back-button';
 import Button from '../../components/button';
 import Input from '../../components/input';
 import MultiSelectCrops from '../../components/multi-select-crops';
@@ -46,9 +47,12 @@ function FarmFormScreen() {
   return (
     <PrivateLayout>
       <div className="flex flex-col max-w-screen-sm gap-6">
-        <h1 className="font-semibold text-2xl">
-          {isEdit ? 'Atualizar Fazenda' : 'Nova Fazenda'}
-        </h1>
+        <div className="flex flex-row items-center gap-3">
+          <BackButton onClick={() => navigate('/farms')} />
+          <h1 className="font-semibold text-2xl">
+            {isEdit ? 'Atualizar Fazenda' : 'Nova Fazenda'}
+          </h1>
+        </div>
         <form
           className="flex flex-col gap-7"
           onSubmit={(event) => {
