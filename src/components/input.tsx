@@ -21,7 +21,14 @@ function Input({
     <div className="flex flex-col">
       <div className="flex flex-col gap-0.5">
         {Boolean(label) && (
-          <label className="text-sm text-gray-700">{label}</label>
+          <label
+            className={[
+              'text-sm',
+              error ? 'text-red-500' : 'text-gray-700',
+            ].join(' ')}
+          >
+            {label}
+          </label>
         )}
         <input
           type={type}
@@ -38,7 +45,7 @@ function Input({
         />
       </div>
       {Boolean(error) && (
-        <div className="h-0 mt-0.5 text-xs text-red-500">{error}</div>
+        <div className="h-0 text-[10px] text-red-500">{error}</div>
       )}
     </div>
   );
