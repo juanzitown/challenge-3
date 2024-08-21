@@ -26,11 +26,18 @@ function FarmableVersusVegetationBoard() {
     return data;
   }, [farms?.length]);
 
+  const isNonIdealState = !farms?.length;
+
   return (
     <div className="flex flex-col flex-1 max-w-[400px] py-4 rounded-md bg-white border">
       <div className="text-lg font-medium text-center text-gray-700">
         Uso de Solo
       </div>
+      {isNonIdealState && (
+        <div className="text-sm text-center font-medium text-gray-700">
+          Nenhuma informação encontrada
+        </div>
+      )}
       <div style={{ height: 160 }}>
         <ResponsivePie
           data={data}

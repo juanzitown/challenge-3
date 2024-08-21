@@ -8,6 +8,8 @@ Este projeto é um desafio de codificação que demonstra a integração de vár
 
 [Challenge](https://juan-fernandes-challenge-3.vercel.app/)
 
+**Observação**: Atualizar a pagina faz recarregar os dados mockados
+
 ## Pacotes e Bibliotecas Utilizadas
 
 ### 1. [Nivo](https://nivo.rocks/)
