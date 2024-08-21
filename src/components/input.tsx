@@ -4,21 +4,40 @@ export type InputProps = {
   value?: string;
   onChange?: (value?: string) => void;
   error?: string;
+  type?: 'text' | 'number';
+  min?: number;
 };
 
-function Input({ label, placeholder, value, onChange, error }: InputProps) {
+function Input({
+  type,
+  min,
+  label,
+  placeholder,
+  value,
+  onChange,
+  error,
+}: InputProps) {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col gap-0.5">
         {Boolean(label) && (
-          <label className="text-sm text-gray-700">{label}</label>
+          <label
+            className={[
+              'text-sm',
+              error ? 'text-red-500' : 'text-gray-700',
+            ].join(' ')}
+          >
+            {label}
+          </label>
         )}
         <input
+          type={type}
+          min={min}
           placeholder={placeholder}
           value={value || ''}
           onChange={(event) => onChange?.(event?.target?.value)}
           className={[
-            'w-full px-3 py-2 text-gray-700 border rounded-lg transition focus:outline-none focus:ring',
+            'w-full h-[38px] px-3 py-2 text-gray-700 border rounded-lg transition focus:outline-none focus:ring',
             error
               ? 'border-red-400 focus:ring-red-200'
               : 'border-gray-300 focus:border-blue-500',
@@ -26,7 +45,7 @@ function Input({ label, placeholder, value, onChange, error }: InputProps) {
         />
       </div>
       {Boolean(error) && (
-        <div className="h-0 mt-0.5 text-xs text-red-500">{error}</div>
+        <div className="h-0 text-[10px] text-red-500">{error}</div>
       )}
     </div>
   );

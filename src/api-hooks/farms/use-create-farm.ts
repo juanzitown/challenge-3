@@ -1,20 +1,21 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { newFarm } from '../../features/farms-slice';
-import FarmType from '../../types/farm-type';
+import FarmType, { validateFarm } from '../../types/farm-type';
 
 type UseCreateFarmProps = {
   onSuccess?: (data: FarmType) => void;
-  onError?: (error: any) => void;
 };
 
-function useCreateFarm({ onSuccess, onError }: UseCreateFarmProps) {
+function useCreateFarm({ onSuccess }: UseCreateFarmProps) {
+  const [errors, setErrors] = useState<any>({});
   const dispatch = useDispatch();
 
   return {
     fetch: (farm: FarmType) => {
-      //check for errors here
-      if (!farm?.name) {
-        onError?.({ message: 'Name is required' });
+      const errors = validateFarm(farm);
+      if (Object.keys(errors).length) {
+        setErrors(errors);
         return;
       }
 
@@ -22,6 +23,7 @@ function useCreateFarm({ onSuccess, onError }: UseCreateFarmProps) {
       onSuccess?.(farm);
     },
     pending: false,
+    errors,
   };
 }
 

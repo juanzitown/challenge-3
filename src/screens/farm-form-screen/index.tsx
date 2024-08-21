@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useCreateFarm from '../../api-hooks/farms/use-create-farm';
 import useGetFarmById from '../../api-hooks/farms/use-get-farm-by-id';
 import useUpdateFarm from '../../api-hooks/farms/use-update-farm';
+import BackButton from '../../components/back-button';
 import Button from '../../components/button';
 import Input from '../../components/input';
 import MultiSelectCrops from '../../components/multi-select-crops';
@@ -11,6 +12,7 @@ import SelectCity from '../../components/select-city';
 import SelectRegisterType from '../../components/select-register-type';
 import SelectState from '../../components/select-state';
 import FarmType from '../../types/farm-type';
+import RegisterTypeEnum from '../../types/register-type-enum';
 
 function FarmFormScreen() {
   const [form, setForm] = useState<FarmType>({} as any);
@@ -21,13 +23,13 @@ function FarmFormScreen() {
     id: Number(params?.id || 0),
   });
 
-  const { fetch: createFarm } = useCreateFarm({
+  const { fetch: createFarm, errors: createErrors } = useCreateFarm({
     onSuccess(data) {
       navigate('/farms');
     },
   });
 
-  const { fetch: updateFarm } = useUpdateFarm({
+  const { fetch: updateFarm, errors: updateErrors } = useUpdateFarm({
     onSuccess(data) {
       navigate('/farms');
     },
@@ -41,15 +43,19 @@ function FarmFormScreen() {
   }, [farm?.id]);
 
   const isEdit = Boolean(params?.id);
+  const errors = { ...(createErrors || {}), ...(updateErrors || {}) };
 
   return (
     <PrivateLayout>
       <div className="flex flex-col max-w-screen-sm gap-6">
-        <h1 className="font-semibold text-2xl">
-          {isEdit ? 'Atualizar Fazenda' : 'Nova Fazenda'}
-        </h1>
+        <div className="flex flex-row items-center gap-3">
+          <BackButton onClick={() => navigate('/farms')} />
+          <h1 className="font-semibold text-2xl">
+            {isEdit ? 'Atualizar Fazenda' : 'Nova Fazenda'}
+          </h1>
+        </div>
         <form
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-7"
           onSubmit={(event) => {
             event?.preventDefault?.();
             if (isEdit) {
@@ -63,7 +69,7 @@ function FarmFormScreen() {
             Informações da fazenda
           </h2>
           <Input
-            label="Nome"
+            label="Nome *"
             placeholder="Nome da fazenda"
             value={form?.name}
             onChange={(value) => {
@@ -72,10 +78,13 @@ function FarmFormScreen() {
                 name: value || '',
               }));
             }}
+            error={errors?.name}
           />
-          <div className="flex flex-row flex-wrap gap-4">
+          <div className="flex flex-col w-[260px]">
             <Input
-              label="Área total (hectares)"
+              label="Área total (hectares) *"
+              type="number"
+              min={1}
               value={form?.totalAreaSize as any}
               onChange={(value) => {
                 setForm((state) => ({
@@ -83,9 +92,14 @@ function FarmFormScreen() {
                   totalAreaSize: value || ('' as any),
                 }));
               }}
+              error={errors?.totalAreaSize}
             />
+          </div>
+          <div className="flex flex-row flex-wrap gap-4">
             <Input
-              label="Área agricultável (hectares)"
+              type="number"
+              min={1}
+              label="Área agricultável (hectares) *"
               value={form?.farmableAreaSize as any}
               onChange={(value) => {
                 setForm((state) => ({
@@ -93,9 +107,12 @@ function FarmFormScreen() {
                   farmableAreaSize: value || ('' as any),
                 }));
               }}
+              error={errors?.farmableAreaSize}
             />
             <Input
-              label="Área de vegetação (hectares)"
+              type="number"
+              min={1}
+              label="Área de vegetação (hectares) *"
               value={form?.vegetationAreaSize as any}
               onChange={(value) => {
                 setForm((state) => ({
@@ -103,11 +120,12 @@ function FarmFormScreen() {
                   vegetationAreaSize: value || ('' as any),
                 }));
               }}
+              error={errors?.vegetationAreaSize}
             />
           </div>
           <div className="flex flex-row flex-wrap gap-4">
             <SelectCity
-              label="Cidade"
+              label="Cidade *"
               placeholder="Nome da cidade"
               value={form?.city}
               onChange={(value) => {
@@ -116,9 +134,10 @@ function FarmFormScreen() {
                   city: value || '',
                 }));
               }}
+              error={errors?.city}
             />
             <SelectState
-              label="Estado"
+              label="Estado *"
               placeholder="Nome do estado"
               value={form?.state}
               onChange={(value) => {
@@ -127,11 +146,12 @@ function FarmFormScreen() {
                   state: value || '',
                 }));
               }}
+              error={errors?.state}
             />
           </div>
 
           <MultiSelectCrops
-            label="Culturas Plantadas"
+            label="Culturas Plantadas *"
             placeholder="Selecione uma ou mais opções"
             values={form?.crops}
             onChange={(values) => {
@@ -140,6 +160,7 @@ function FarmFormScreen() {
                 crops: values || [],
               }));
             }}
+            error={errors?.crops}
           />
 
           <h2 className="text-xs font-bold uppercase text-gray-700 tracking-wide">
@@ -161,7 +182,7 @@ function FarmFormScreen() {
           />
           <div className="flex flex-row gap-4">
             <SelectRegisterType
-              label="Tipo de registro"
+              label="Tipo de documento"
               placeholder="Selecione um tipo"
               value={form?.farmer?.register?.type}
               onChange={(value) => {
@@ -176,10 +197,19 @@ function FarmFormScreen() {
                   },
                 }));
               }}
+              error={errors?.['farmer.register.type']}
             />
             <Input
-              label="CPF ou CNPJ"
-              placeholder="Número do registro"
+              label={
+                (form?.farmer?.register?.type as any)?.value ===
+                RegisterTypeEnum.CPF
+                  ? 'CPF'
+                  : (form?.farmer?.register?.type as any)?.value ===
+                      RegisterTypeEnum.CNPJ
+                    ? 'CNPJ'
+                    : 'Número do documento'
+              }
+              placeholder="Número do documento"
               value={form?.farmer?.register?.number}
               onChange={(value) => {
                 setForm((state) => ({
@@ -193,6 +223,7 @@ function FarmFormScreen() {
                   },
                 }));
               }}
+              error={errors?.['farmer.register.number']}
             />
           </div>
           <div className="flex flex-row items-center justify-end gap-4">

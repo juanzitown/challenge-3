@@ -26,7 +26,7 @@ function FarmListItem({ farm }: FarmListItemProps) {
         {/* area size icons */}
         <div className="flex flex-row items-center justify-center gap-6">
           <div
-            className="flex flex-row gap-1"
+            className="flex flex-row gap-1 min-w-[80px]"
             title={`Área total em hectares: ${farm?.totalAreaSize}ha`}
           >
             <svg
@@ -53,7 +53,7 @@ function FarmListItem({ farm }: FarmListItemProps) {
             </div>
           </div>
           <div
-            className="flex flex-row gap-1"
+            className="flex flex-row gap-1 min-w-[80px]"
             title={`Área de vegetação em hectares: ${farm?.vegetationAreaSize}ha`}
           >
             <svg
@@ -73,7 +73,7 @@ function FarmListItem({ farm }: FarmListItemProps) {
             </div>
           </div>
           <div
-            className="flex flex-row gap-1"
+            className="flex flex-row gap-1 min-w-[80px]"
             title={`Área agricultável em hectares: ${farm?.farmableAreaSize}ha`}
           >
             <svg
@@ -119,7 +119,7 @@ function FarmListItem({ farm }: FarmListItemProps) {
           {[
             farm?.farmer?.name,
             (farm?.farmer?.register?.type as any)?.label,
-            farm?.farmer?.register?.number,
+            // farm?.farmer?.register?.number,
           ]
             .filter(Boolean)
             .join(' | ')}
