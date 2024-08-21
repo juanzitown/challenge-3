@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# Desafio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto demonstra a integração de ferramentas modernas como Nivo, Redux Toolkit e Tailwind CSS, proporcionando uma base robusta para construir aplicações web escaláveis e fáceis de manter.
 
-## Available Scripts
+Este projeto é um desafio de codificação que demonstra a integração de várias tecnologias e pacotes. Abaixo está um resumo das ferramentas e bibliotecas utilizadas:
 
-In the project directory, you can run:
+## Pacotes e Bibliotecas Utilizadas
 
-### `npm start`
+### 1. [Nivo](https://nivo.rocks/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Uso**: O Nivo é utilizado para criar gráficos e visualizações interativas e ricas. Neste projeto, ele é usado para gráficos de pizza e outras visualizações de dados.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2. [Redux Toolkit](https://redux-toolkit.js.org/)
 
-### `npm test`
+- **Uso**: O Redux Toolkit é utilizado para gerenciar o estado global da aplicação. Ele simplifica a configuração do Redux, fornecendo ferramentas e convenções úteis. Neste projeto, também é usado para lidar com dados simulados.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. [Tailwind CSS](https://tailwindcss.com/)
 
-### `npm run build`
+- **Uso**: O Tailwind CSS é empregado para estilizar os componentes. Ele permite um desenvolvimento de UI rápido, utilizando classes de utilidade CSS. O Tailwind facilita a construção de designs responsivos e consistentes ao longo do projeto.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estrutura do Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O projeto é organizado de forma modular, com componentes separados para diferentes funcionalidades. Os principais componentes incluem:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Gráficos**: Responsável por todas as visualizações utilizando o Nivo.
+- **Gerenciamento de Estado**: Gerenciado pelo Redux Toolkit, incluindo dados simulados.
+- **Componentes de UI**: Estilizados com o Tailwind CSS para uma aparência coesa.
 
-### `npm run eject`
+## Como Executar o Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Instalar Dependências**:
+   `npm install`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Iniciar o Servidor de Desenvolvimento**
+   `npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Construir para Produção**
+   `npm build`
