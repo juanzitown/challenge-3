@@ -27,9 +27,9 @@ function Button({ type = 'button', onClick, children, variant }: ButtonProps) {
 export default Button;
 
 const baseClasses =
-  'px-4 py-2 font-medium rounded-lg shadow-md focus:outline-none focus:ring transition uppercase';
+  'px-4 py-2 font-medium rounded-lg shadow-md focus:outline-none focus:ring transition uppercase outline-none';
 const primaryClasses =
-  'bg-blue-500 text-white hover:bg-blue-700 focus:ring-blue-400';
+  'bg-aurora-500 text-white hover:bg-aurora-600 focus:ring-aurora-300';
 const dangerClasses =
   'bg-red-500 text-white hover:bg-red-700 focus:ring-red-400';
 const defaultClasses =

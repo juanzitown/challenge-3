@@ -9,7 +9,7 @@ function IconButton({ type = 'button', onClick, icon }: IconButtonProps) {
     <button
       type={type}
       onClick={onClick}
-      className="p-1 bg-gray-200 text-gray-600 rounded-md hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 transition"
+      className="p-1 bg-aurora-100 text-aurora-700 rounded-md hover:bg-aurora-200 focus:outline-none focus:ring focus:ring-aurora-400 transition"
     >
       {
         {

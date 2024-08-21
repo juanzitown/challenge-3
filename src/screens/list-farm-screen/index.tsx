@@ -11,7 +11,7 @@ function ListFarmScreen() {
     <PrivateLayout>
       <div className="flex flex-row justify-between items-center">
         <h1 className="font-semibold text-2xl">Fazendas</h1>
-        <Link to="/farms/new">
+        <Link to="/farms/new" className="outline-none">
           <Button variant="primary">Nova Fazenda</Button>
         </Link>
       </div>

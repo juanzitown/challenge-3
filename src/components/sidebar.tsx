@@ -4,7 +4,7 @@ function Sidebar() {
   const location = useLocation();
   return (
     <div className="min-h-screen w-64 bg-gray-800 text-white flex flex-col">
-      <div className="flex items-center justify-center h-16 border-b border-gray-700">
+      <div className="flex items-center justify-center h-16 border-b border-aurora-500">
         <h1 className="text-2xl">Challenge</h1>
       </div>
       <nav className="flex flex-col mt-4">
@@ -13,7 +13,7 @@ function Sidebar() {
           className={[
             'py-2 px-4 hover:bg-gray-700 border-l-4 transition',
             location?.pathname === '/'
-              ? 'border-white bg-white/5'
+              ? 'border-aurora-500 bg-aurora-500/5'
               : 'border-transparent',
           ].join(' ')}
         >
@@ -24,7 +24,7 @@ function Sidebar() {
           className={[
             'py-2 px-4 hover:bg-gray-700 border-l-4 transition',
             location?.pathname?.includes?.('/farms')
-              ? 'border-white bg-white/5'
+              ? 'border-aurora-500 bg-aurora-500/5'
               : 'border-transparent',
           ].join(' ')}
         >
