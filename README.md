@@ -18,6 +18,14 @@ Este projeto é um desafio de codificação que demonstra a integração de vár
 
 - **Uso**: O Tailwind CSS é empregado para estilizar os componentes. Ele permite um desenvolvimento de UI rápido, utilizando classes de utilidade CSS. O Tailwind facilita a construção de designs responsivos e consistentes ao longo do projeto.
 
+### 4. [React Select](https://react-select.com/)
+
+- **Uso**: O React Select é utilizado para criar componentes de seleção personalizados e acessíveis. Neste projeto, ele é usado para melhorar a experiência do usuário na escolha de opções.
+
+### 5. [React Router](https://reactrouter.com/)
+
+- **Uso**: O React Router é utilizado para gerenciar a navegação entre as diferentes páginas da aplicação. Ele facilita a criação de rotas e a transição suave entre componentes.
+
 ## Estrutura do Projeto
 
 O projeto é organizado de forma modular, com componentes separados para diferentes funcionalidades. Os principais componentes incluem:
