@@ -12,7 +12,7 @@ Este projeto é um desafio de codificação que demonstra a integração de vár
 
 ### 2. [Redux Toolkit](https://redux-toolkit.js.org/)
 
-- **Uso**: O Redux Toolkit é utilizado para gerenciar o estado global da aplicação. Ele simplifica a configuração do Redux, fornecendo ferramentas e convenções úteis. Neste projeto, também é usado para lidar com dados simulados.
+- **Uso**: O Redux Toolkit é utilizado para gerenciar o estado global da aplicação. Ele simplifica a configuração do Redux, fornecendo ferramentas e convenções úteis. Neste projeto, também é usado para lidar com dados mockados.
 
 ### 3. [Tailwind CSS](https://tailwindcss.com/)
 
